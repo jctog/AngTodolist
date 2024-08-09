@@ -4,7 +4,7 @@
     <a routerLink="/todo">Todolist</a>
   </nav>
 
-  <form [formGroup]="todoForm" (submit)="addTask()">
+  <form [formGroup]="todoForm" (submit)="updateTodo()">
     <div>
       <label for="exampleFormControlInput1" class="form-label">Title</label>
       <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="title" placeholder="Ajouter une tâche...">

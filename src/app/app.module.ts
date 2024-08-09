@@ -5,21 +5,25 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ContactComponent } from './components/contact/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
-import { TodoModule } from './modules/todo/todo.module';
+import { TodolistComponent } from './components/todo/todolist/todolist.component';
+import { TodoFormComponent } from './components/todo/todo-form/todo-form.component';
+import { TodoComponent } from './components/todo/todo/todo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TodoUpdateFormComponent } from './components/todo/todo-update-form/todo-update-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    TodoComponent,
+    TodoFormComponent,
+    TodolistComponent,
+    TodoUpdateFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    TodoModule
-  ],
+  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
