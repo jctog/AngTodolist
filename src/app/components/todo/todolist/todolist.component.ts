@@ -27,6 +27,4 @@ export class TodolistComponent {
     console.log('delete id', id);
     this.getTodos();
   }
-
-
 }

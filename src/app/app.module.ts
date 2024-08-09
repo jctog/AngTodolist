@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TodolistComponent } from './components/todo/todolist/todolist.component';
 import { TodoFormComponent } from './components/todo/todo-form/todo-form.component';
 import { TodoComponent } from './components/todo/todo/todo.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoUpdateFormComponent } from './components/todo/todo-update-form/todo-update-form.component';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { TodoUpdateFormComponent } from './components/todo/todo-update-form/todo
     TodolistComponent,
     TodoUpdateFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

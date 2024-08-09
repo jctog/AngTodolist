@@ -19,16 +19,18 @@
         <th scope="row">{{i+1}}</th>
         <td>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="todo.status">
           </div>
         </td>
-        <td>{{todo.title}} </td>
+        <td [class]="todo.status?'done':''">{{todo.title}} </td>
         <td>{{todo.description}} </td>
-        <td>{{todo.title}} </td>
         <td>
           <a routerLink="updateform/{{todo.id}}" class="btn btn-primary">Update</a>
           <button class="btn btn-danger ms-2" (click)="deleteTodo(todo.id)">Delete</button>
         </td>
     </tbody>
   </table>
+
+  <p> {{todos | json}} </p>
+
 </div>
