@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';import { DateService } from '../../date.service';
+import { Component } from '@angular/core';import { DateService } from '../../services/date-service/date.service';
 ;
 
 @Component({
