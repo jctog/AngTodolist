@@ -3,7 +3,10 @@
   <nav>
     <a routerLink="todoform">Add new Task</a>
   </nav>
-
+  <div class="d-flex">
+    <input class="form-control me-2" type="search" [(ngModel)]="keyWord" (keydown)="search()" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </div>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -31,6 +34,30 @@
     </tbody>
   </table>
 
-  <p> {{todos | json}} </p>
+  <div class="stats">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" (change)="getAllTodos()"
+        id="flexRadioDefault1" checked>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Tous({{statistics().total}})
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" (change)="getTraitedTodos()"
+        id="flexRadioDefault2">
+      <label class="form-check-label" for="flexRadioDefault2">
+        Traités({{statistics().traited}})
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" (change)="getUnTraitedTodos()"
+        id="flexRadioDefault3">
+      <label class="form-check-label" for="flexRadioDefault3">
+        Non traités({{statistics().unTraited}})
+      </label>
+    </div>
+  </div>
+
+  <!-- <p>{{stats|json}} </p> -->
 
 </div>

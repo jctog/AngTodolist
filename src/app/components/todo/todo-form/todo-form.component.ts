@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
   styleUrl: './todo-form.component.css',
 })
 export class TodoFormComponent {
-
   todoForm = new FormGroup({
     title: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
@@ -26,8 +25,9 @@ export class TodoFormComponent {
       status: false,
     };
     console.log(this.todoForm.value);
-    this.todoService.addTodo(todo);
-
-    this.router.navigate(['todo']);
+    if (todo.title.trim() !== '' && todo.description.trim() !== '') {
+      this.todoService.addTodo(todo);
+      this.router.navigate(['todo']);
+    }
   }
 }

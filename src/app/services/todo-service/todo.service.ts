@@ -37,7 +37,7 @@ export class TodoService {
 
   deleteTodo(id: number): void {
     this.todoList = this.todoList.filter((element) => element.id !== id);
-    console.log('Service deleteTodo', this.todoList);
+    // console.log('Service deleteTodo', this.todoList);
   }
 
   updateTodo(id: number, title: string, description: string) {

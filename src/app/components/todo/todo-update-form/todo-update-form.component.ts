@@ -37,7 +37,9 @@ export class TodoUpdateFormComponent {
   updateTodo() {
     const title: string = this.todoForm.value.title || '';
     const description: string = this.todoForm.value.description || '';
-    this.todoService.updateTodo(this.id, title, description);
-    this.route.navigate(['todo']);
+    if (title.trim() !== '' && description.trim() !== '') {
+      this.todoService.updateTodo(this.id, title, description);
+      this.route.navigate(['todo']);
+    }
   }
 }
